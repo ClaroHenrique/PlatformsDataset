@@ -7,7 +7,7 @@ import os
 
 print('#' * 32)
 
-def get_html(url, delay=50):
+def get_html(url, delay=120):
   time.sleep(delay)
   txt = requests.get(url).text
   return txt
