@@ -12,6 +12,7 @@ def search_product_page(html, url, access_date):
   product_info = {}
   product_info['web_page_url'] = url
   product_info['web_page_access_date'] = access_date
+  product_info['Product Name'] = soup.find('h1', {'class': 'gpudb-name'}).text.strip()
   
   # general specs
   features = {}

@@ -34,7 +34,7 @@ for (i, (description, urls)) in enumerate(pages_urls_data.items()):
   print('progress', i, '/', len(pages_urls_data))
   
   for url in urls:
-    if url in results:
+    if url in results and not ("HTTP 429 - Too Many Requests" in results[url]['html']):
       print("skip", url)
       continue
     else: print("get", url)
