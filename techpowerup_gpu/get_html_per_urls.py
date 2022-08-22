@@ -16,8 +16,14 @@ results = {}
 try:
   with open('product_html_data.json') as f:
     results = json.load(f)
-except:
-  print('couldnt find result file, starting from beginning')
+except Exception as e: print('merge error', e)
+
+try:
+  with open('resultoso.json') as f:
+    results2 = json.load(f)
+  results = {**results, **results2}
+except Exception as e: print('merge error', e)
+
 
 pages_urls_data = {}
 with open('product_pages_urls.json') as f:
