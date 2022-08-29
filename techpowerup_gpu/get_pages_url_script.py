@@ -5,7 +5,7 @@ import time
 import json
 import os
 
-def get_html(url, delay=5):
+def get_html(url, delay=20):
   time.sleep(delay)
   txt = requests.get(url).text
   return txt
@@ -30,8 +30,8 @@ def search_results_menu(manufacter, year):
   return result_urls
 
 
-manufacters = ['NVIDIA', 'AMD']
-start_y, end_y = (2015, 2022)
+manufacters = ['NVIDIA', 'AMD', 'Intel']
+start_y, end_y = (2010, 2022)
 years = [str(i) for i in range(start_y, end_y + 1)]
 
 c = 0
